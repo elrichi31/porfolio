@@ -1,10 +1,8 @@
-import Navbar from "../components/nav";
 import Hero from "../components/hero";
 import Card from "../components/project_card";
 import Button from "../components/button";
 import CarouselDefault from "../components/carousel";
 import Image from "next/image";
-import Footer from "../components/footer";
 function AboutPage() {
     return (
         <div>
