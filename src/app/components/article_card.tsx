@@ -29,7 +29,7 @@ export function ArticleCard() {
                 </Typography>
             </CardBody>
             <CardFooter className="pt-0">
-                <Button color="green" text="Ver mas"></Button>
+                <Button link="/blog/article" color="green" text="Ver mas"></Button>
             </CardFooter>
         </Card>
     );

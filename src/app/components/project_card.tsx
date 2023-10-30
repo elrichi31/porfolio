@@ -1,19 +1,48 @@
 import React from 'react';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
-function ProjectCard() {
+interface ProjectCardProps {
+    title: string;
+    description: string;
+    website: string;
+    github: string;
+    language: string;
+    date: string;
+}
+
+function formatDate(dateString: string) {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // +1 porque los meses empiezan en 0
+    const year = date.getFullYear();
+    
+    return `${day}/${month}/${year}`;
+}
+
+
+function ProjectCard({ title, description, website, github, language, date }: ProjectCardProps) {
     return (
-        <div className="rounded-xl p-6 w-auto mx-auto shadow-lg bg-[#545F65]">
-            <h1 className="text-2xl font-bold text-white mb-4">Project title</h1>
+        <div className="rounded-xl p-6 w-full mx-auto shadow-lg bg-[#545F65]">
+            <div className='flex justify-start items-center mb-4'>
+                <h1 className="text-2xl font-bold text-white">{title}</h1>
+                <div className="mx-2">
+                    <span className="text-white bg-[#008734] p-1 sm:p-1.5 rounded-xl text-xs sm:text-xs">{language}</span>
+                </div>
+                <div>
+                    <p className='text-sm'>
+                        {formatDate(date)}
+                    </p>
+                </div>                
+            </div>
             <p className="mb-6">
-                Lorem ipsum dolor sit amet consectetur. Neque viverra metus quis aliquet nam. Massa arcu est aliquam ut at ultricies ultricies suscipit tortor. Massa arcu aliquam ut at ultricies ultricies suscipit tortor.
+                {description}
             </p>
             <div className="flex justify-start items-center space-x-4 ">
-                <a href="#" className="bg-green-600 text-white rounded-xl px-4 py-2 flex items-center gap-2 hover:bg-green-700">
+                <a href={website} className="text-white rounded-xl px-4 py-2 flex items-center gap-2 bg-[#008734] hover:bg-[#01732D]">
                     Website
                     <FaExternalLinkAlt />
                 </a>
-                <a href="#" className="bg-green-600 text-white rounded-xl px-4 py-2 flex items-center gap-2 hover:bg-green-700">
+                <a href={github} className="text-white rounded-xl px-4 py-2 flex items-center gap-2 bg-[#008734] hover:bg-[#01732D]">
                     Github
                     <FaGithub />
                 </a>

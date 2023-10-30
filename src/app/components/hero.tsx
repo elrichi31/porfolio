@@ -20,7 +20,7 @@ function Hero() {
                 </div>
             </div>
             <div className="flex justify-center">
-                <Button text="Contáctame" color="grey"></Button>
+                <Button link="/contact" text="Contáctame" color="grey"></Button>
             </div>
         </div>
     )

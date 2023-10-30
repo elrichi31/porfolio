@@ -5,23 +5,23 @@ import { MdClose } from "react-icons/md"
 import Image from "next/image";
 export const navLinks = [
     {
-        id: "inicio",
+        id: "/",
         title: "Inicio",
     },
     {
-        id: "proyectos",
+        id: "/projects",
         title: "Proyectos",
     },
     {
-        id: "about",
+        id: "/about",
         title: "Sobre mi",
     },
     {
-        id: "blog",
+        id: "/blog",
         title: "Blog",
     },
     {
-        id: "contacto",
+        id: "/contact",
         title: "Contacto",
     },
 ];
@@ -46,7 +46,7 @@ const Navbar = () => {
                             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
                         onClick={() => setActive(nav.title)}
                     >
-                        <a href={`#${nav.id}`}>{nav.title}</a>
+                        <a href={`${nav.id}`}>{nav.title}</a>
                     </li>
                 ))}
             </ul>
@@ -70,7 +70,7 @@ const Navbar = () => {
                                     } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                                 onClick={() => setActive(nav.title)}
                             >
-                                <a href={`#${nav.id}`}>{nav.title}</a>
+                                <a href={`${nav.id}`}>{nav.title}</a>
                             </li>
                         ))}
                     </ul>

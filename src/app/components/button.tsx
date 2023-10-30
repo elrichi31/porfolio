@@ -1,15 +1,18 @@
 interface ButtonProps {
     text: string;
-    color: string; 
+    link: string;
+    color: string;
+    children?: React.ReactNode; // Add children property to ButtonProps interface
 }
 
-function Button({ text, color }: ButtonProps) {
-    const bgColorClass = color === "green" ? "bg-[#008734] hover:bg-[#01732D]" : "bg-[#545F65] hover:bg-[#444D52]"; 
+function Button({ text, color, link, children }: ButtonProps) {
+    const bgColorClass = color === "green" ? "bg-[#008734] hover:bg-[#01732D]" : "bg-[#545F65] hover:bg-[#444D52]";
 
     return (
-        <button className={`font-bold rounded-xl py-[6px] px-[12px] ${bgColorClass}`}>
+        <a href={link} className={`font-bold rounded-xl py-[6px] px-[12px] ${bgColorClass}`}>
             {text}
-        </button>
+            {children}
+        </a>
     );
 }
 
