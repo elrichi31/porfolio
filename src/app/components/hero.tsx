@@ -10,7 +10,7 @@ function Hero() {
                     <Image src="/hero_img.png" width={500} height={500} alt={"Hero image"}></Image>
                 </div>
                 <div className="max-w-lg md:mr-28 mx-auto text-center md:text-left">
-                    <h1 className="text-4xl md:text-5xl font-bold">¡Hola, Mucho<br></br>gusto en <br></br>conocerte!✌️</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold">¡Hola, mucho<br></br>gusto en <br></br>conocerte!✌️</h1>
                     <div className="my-12 flex items-center justify-around md:justify-between">
                         <a href="https://www.twitter.com" className="mx-2"><FaTwitter className="text-4xl"></FaTwitter></a>
                         <a href="https://www.instagram.com" className="mx-2"><FaInstagram className="text-4xl"></FaInstagram></a>

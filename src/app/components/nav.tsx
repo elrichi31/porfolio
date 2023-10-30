@@ -33,11 +33,12 @@ const Navbar = () => {
     return (
         <nav className="w-full flex py-6 justify-between items-center navbar">
             {/* Logo */}
-            <div className="text-white">
-                <Image src="/logo.png" alt="Logo" width={100} height={100} className="h-16 w-auto" />
-            </div>
+            <a href="/" className="text-white flex items-center sm:mb-0">
+                <Image src="/logo.png" alt="Logo" width={100} height={100} className="h-14 w-auto mr-2" />
+                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">AlphaBit</span>
+            </a>
             {/* Desktop Navigation */}
-            <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+            <ul className="list-none md:flex hidden justify-end items-center flex-1">
                 {navLinks.map((nav, index) => (
                     <li
                         key={nav.id}
@@ -51,7 +52,7 @@ const Navbar = () => {
             </ul>
 
             {/* Mobile Navigation */}
-            <div className="sm:hidden flex flex-1 justify-end items-center">
+            <div className="md:hidden flex flex-1 justify-end items-center">
                 {
                     toggle ? <MdClose className="text-4xl" onClick={() => setToggle(!toggle)}></MdClose> : <FiMenu className="text-4xl" onClick={() => setToggle(!toggle)}></FiMenu>
                 }
