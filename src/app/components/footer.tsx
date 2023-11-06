@@ -12,15 +12,6 @@ function Footer() {
                     </a>
                     <ul className="flex flex-col [@media(min-width:605px)]:flex-row items-center text-[@media(min-width:605px)] font-medium text-gray-500 [@media(min-width:605px)]:mt-0 dark:text-gray-400 [@media(min-width:605px)]:space-y-0">
                         <li>
-                            <a href="#" className="mb-2 [@media(min-width:605px)]:mb-0 mr-0 [@media(min-width:605px)]:mr-3 hover:underline md:mr-6">About</a>
-                        </li>
-                        <li>
-                            <a href="#" className="mb-2 [@media(min-width:605px)]:mb-0 mr-0 [@media(min-width:605px)]:mr-3 hover:underline md:mr-6">Privacy</a>
-                        </li>
-                        <li>
-                            <a href="#" className="mb-2 [@media(min-width:605px)]:mb-0 mr-0 [@media(min-width:605px)]:mr-3 hover:underline md:mr-6">Licensing</a>
-                        </li>
-                        <li>
                             <a href="#" className="mb-2 [@media(min-width:605px)]:mb-0 mr-0 [@media(min-width:605px)]:mr-3 hover:underline md:mr-6">Contact</a>
                         </li>
                         <li>
