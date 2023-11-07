@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { AiFillHeart } from 'react-icons/ai';
-import { CardHeader } from '@material-tailwind/react';
+import { CardHeader } from './material';
 interface BlogCardProps {
   src: string;
   title: string;

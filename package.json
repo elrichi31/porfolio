@@ -11,12 +11,14 @@
   "dependencies": {
     "@material-tailwind/react": "^2.1.4",
     "axios": "^1.6.0",
-    "next": "13.5.6",
+    "debug": "^4.3.4",
+    "next": "13.4.19",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "supports-color": "^9.4.0",
     "tw-elements": "^1.0.0"
   },
   "devDependencies": {
@@ -25,6 +27,8 @@
     "@types/react-dom": "^18",
     "@types/react-slick": "^0.23.11",
     "autoprefixer": "^10",
+    "eslint": "8.53.0",
+    "eslint-config-next": "14.0.1",
     "postcss": "^8",
     "tailwindcss": "^3",
     "typescript": "^5"

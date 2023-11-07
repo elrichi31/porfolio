@@ -18,7 +18,7 @@ interface githubProps {
     updated_at: string;
 }
 
-function AboutPage() {
+function Page() {
     const [repositories, setRepositories] = useState<githubProps[]>([]);
 
     useEffect(() => {
@@ -33,7 +33,7 @@ function AboutPage() {
     }, []);
     return (
         <div>
-            <Hero />
+            <Hero /> 
             <div>
                 <h1 className="text-4xl font-bold my-16 text-center sm:text-left">Proyectos</h1>
                 <div className="my-12 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4">
@@ -82,4 +82,4 @@ function AboutPage() {
     );
 }
 
-export default AboutPage;
+export default Page;
