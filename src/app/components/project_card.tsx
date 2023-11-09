@@ -23,12 +23,12 @@ function formatDate(dateString: string) {
 function ProjectCard({ title, description, website, github, language, date }: ProjectCardProps) {
     return (
         <div className="rounded-xl p-6 w-full mx-auto shadow-lg bg-[#545F65]">
-            <div className='flex justify-start items-center mb-4'>
-                <h1 className="text-xl font-bold text-white">{title}</h1>
-                <div className="mx-2">
+            <h1 className="text-xl font-bold text-white">{title}</h1>
+            <div className='flex justify-start items-center my-2'>
+                <div className="mr-2">
                     <span className="text-white bg-[#008734] p-1 sm:p-1.5 rounded-xl text-xs sm:text-xs">{language}</span>
                 </div>
-                <div>
+                <div className='flex justify-center items-center mt-[5px]'>
                     <p className='text-sm'>
                         {formatDate(date)}
                     </p>
