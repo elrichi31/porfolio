@@ -1,7 +1,5 @@
-"use client"
 import React from 'react';
 import { AiFillHeart } from 'react-icons/ai';
-import { CardHeader } from './material';
 interface BlogCardProps {
   src: string;
   title: string;
@@ -18,13 +16,13 @@ function BlogCard({ src, title, children, date }: BlogCardProps) {
         <h2 className="text-white text-xl font-bold">{title}</h2>
         <p className="text-sm">{date}</p>
       </div>
-      <CardHeader className="h-40 lg:h-64 xl:h-72 my-4 mx-0">
+      <div className="h-40 lg:h-64 xl:h-72 my-4 mx-0">
         <img
           src={src}
           alt="card-image"
           className="h-full w-full rounded-lg object-cover"
         />
-      </CardHeader>
+      </div>
 
       {/* Descripción */}
       <p className=" text-sm mb-4">
