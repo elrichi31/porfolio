@@ -12,10 +12,10 @@ function Hero() {
                 <div className="max-w-lg md:mr-28 mx-auto text-center md:text-left">
                     <h1 className="text-4xl md:text-5xl font-bold">¡Hola, mucho<br></br>gusto en <br></br>conocerte!✌️</h1>
                     <div className="my-12 flex items-center justify-around md:justify-between">
-                        <a href="https://www.twitter.com" className="mx-2"><FaTwitter className="text-4xl"></FaTwitter></a>
-                        <a href="https://www.instagram.com" className="mx-2"><FaInstagram className="text-4xl"></FaInstagram></a>
+                        <a href="https://www.twitter.com/nicolas_moina" className="mx-2"><FaTwitter className="text-4xl"></FaTwitter></a>
+                        <a href="https://www.instagram.com/nicolas.moina" className="mx-2"><FaInstagram className="text-4xl"></FaInstagram></a>
                         <a href="https://www.github.com/elrichi31" className="mx-2"><FaGithub className="text-4xl"></FaGithub></a>
-                        <a href="https://www.linkedin.com" className="mx-2"><FaLinkedin className="text-4xl"></FaLinkedin></a>
+                        <a href="https://www.linkedin.com/in/nicolas-moina-21a85b20a" className="mx-2"><FaLinkedin className="text-4xl"></FaLinkedin></a>
                     </div>
                 </div>
             </div>

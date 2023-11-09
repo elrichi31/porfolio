@@ -68,11 +68,9 @@ function Page() {
                     <div className="md:w-[100rem]">
                         <Image src="/about.png" width={1000} height={1000} alt="aboutme"></Image>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, suscipit
-                        non sit quia nam id quos maxime minima
-                        temporibus quis odit voluptatem, beatae repudiandae similique,
-                        corrupti atque nisi tenetur! Hic, recusandae cum? Quisquam optio
-                        libero dignissimos facilis delectus nobis ad!</p>
+                    <p>
+                    ¡Hola! Soy Nicolas Moina, un ingeniero en ciencias de la computación apasionado por el desarrollo web, el análisis de datos y la ciberseguridad. He tenido la oportunidad de trabajar en diversas capacidades, incluyendo como analista de datos en Diners Club International, desarrollador full stack en la Universidad San Francisco de Quito y analista de ciberseguridad en Banco Pichincha
+                    </p>
                 </div>
                 <div className="flex justify-center">
                     <Button text="Mas sobre mi" link="/about" color="green"></Button>
