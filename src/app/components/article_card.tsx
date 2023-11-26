@@ -29,7 +29,7 @@ function ArticleCard({src, title, description, slug}: BlogCardProps) {
                 </Typography>
             </CardBody>
             <CardFooter className="pt-0">
-                <Button link={`/blog/${slug}`} color="green" text="Ver mas"></Button>
+                <Button link={`/${slug}`} color="green" text="Ver mas"></Button>
             </CardFooter>
         </Card>
         // <div></div>
