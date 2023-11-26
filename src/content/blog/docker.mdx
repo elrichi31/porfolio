@@ -1,0 +1,121 @@
+---
+title: Desarrollando con Docker, una Guía para Principiantes
+description: Explora cómo utilizar Docker para crear, desplegar y ejecutar aplicaciones en contenedores.
+image: https://velog.velcdn.com/images/nimwver/post/77d4cc14-1782-4a23-9cf3-573f338ae3a5/image.webp
+published: 5 feb, 2023
+author: Nicolas Moina
+imageAuthor: https://avatars.githubusercontent.com/u/29241550?v=4
+authorCharge: FullStack Developer at Apple Inc.
+tags:
+    - Docker
+    - Contenedores
+    - Desarrollo
+    - Principiantes
+---
+## Desarrollando con Docker: Una Guía para Principiantes
+
+Docker ha revolucionado el mundo del desarrollo de software, ofreciendo una forma eficiente de crear, desplegar y ejecutar aplicaciones en contenedores. En este artículo, exploraremos Docker desde una perspectiva de principiante, proporcionando una introducción completa, ejemplos de código y mejores prácticas.
+
+## ¿Qué es Docker?
+
+Docker es una plataforma de contenedores que permite a los desarrolladores empaquetar aplicaciones y sus dependencias en un contenedor virtual. Esto asegura que la aplicación funcione de manera uniforme en cualquier entorno.
+
+## Instalación de Docker
+
+Para empezar, necesitas instalar Docker en tu sistema. Puedes descargarlo desde [el sitio web oficial de Docker](https://www.docker.com/products/docker-desktop).
+
+## Conceptos Básicos de Docker
+
+- **Imágenes Docker**: Son plantillas para crear contenedores. Contienen el código de la aplicación, las bibliotecas, las dependencias y otros archivos necesarios para ejecutar la aplicación.
+- **Contenedores Docker**: Son instancias en ejecución de imágenes Docker. Puedes tener varios contenedores corriendo a partir de la misma imagen.
+- **Dockerfile**: Es un archivo de texto que contiene todas las instrucciones para construir una imagen Docker.
+
+## Tu Primer Dockerfile
+
+Vamos a crear un Dockerfile simple para una aplicación Node.js.
+
+1. **Crea un directorio para tu proyecto**:
+
+    ```bash
+    mkdir mi-app-docker
+    cd mi-app-docker
+    ```
+
+2. **Crea un archivo `package.json`**:
+
+    ```json
+    {
+      "name": "mi-app-docker",
+      "version": "1.0.0",
+      "main": "index.js",
+      "scripts": {
+        "start": "node index.js"
+      },
+      "dependencies": {
+        "express": "^4.17.1"
+      }
+    }
+    ```
+
+3. **Crea un archivo `index.js`**:
+
+    ```javascript
+    const express = require('express');
+    const app = express();
+
+    app.get('/', (req, res) => {
+      res.send('Hola Mundo con Docker!');
+    });
+
+    app.listen(3000, () => {
+      console.log('Aplicación escuchando en el puerto 3000');
+    });
+    ```
+
+4. **Crea un Dockerfile**:
+
+    ```Dockerfile
+    FROM node:14
+
+    WORKDIR /usr/src/app
+
+    COPY package*.json ./
+
+    RUN npm install
+
+    COPY . .
+
+    EXPOSE 3000
+
+    CMD [ "npm", "start" ]
+    ```
+
+5. **Construye y ejecuta tu contenedor**:
+
+    ```bash
+    docker build -t mi-app-docker .
+    docker run -p 3000:3000 mi-app-docker
+    ```
+
+    Visita `http://localhost:3000` en tu navegador para ver la aplicación en acción.
+
+## Comprendiendo el Dockerfile
+
+- `FROM node:14`: Establece la imagen base (Node.js versión 14).
+- `WORKDIR /usr/src/app`: Define el directorio de trabajo dentro del contenedor.
+- `COPY package*.json ./`: Copia los archivos `package.json` y `package-lock.json` (si existe) al directorio de trabajo.
+- `RUN npm install`: Ejecuta `npm install` para instalar las dependencias de la aplicación.
+- `COPY . .`: Copia el resto de los archivos del directorio actual al directorio de trabajo en el contenedor.
+- `EXPOSE 3000`: Informa a Docker que la aplicación se ejecutará en el puerto 3000.
+- `CMD [ "npm", "start" ]`: El comando que se ejecutará cuando se inicie el contenedor.
+
+## Buenas Prácticas con Docker
+
+1. **Mantén tus imágenes lo más livianas posible**: Utiliza imágenes base pequeñas y evita instalar paquetes innecesarios.
+2. **Aprovecha el caché de capas de Docker**: Ordena las instrucciones en tu Dockerfile de manera eficiente para aprovechar el caché.
+3. **Utiliza `.dockerignore`**: Similar a `.gitignore`, evita copiar archivos innecesarios a tu imagen.
+4. **Gestiona datos con volúmenes**: Para la persistencia de datos, utiliza volúmenes de Docker en lugar de almacenar datos directamente en el contenedor.
+
+## Conclusión
+
+Docker es una herramienta poderosa que simplifica el proceso de desarrollo y despliegue de aplicaciones. Con esta guía para principiantes

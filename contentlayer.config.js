@@ -29,8 +29,31 @@ export const Doc = defineDocumentType(() => ({
             type: "string",
         },
         published: {
-            type: "boolean",
+            type: "string",
             default: true,
+        },
+        image: {
+            type: "string",
+            required: true,
+        },
+        author: {
+            type: "string",
+            required: true,
+        },
+        imageAuthor: {
+            type: "string",
+            required: true,
+        },
+        authorCharge: {
+            type: "string",
+            required: true,
+        },
+        tags: {
+            type: "list",
+            of: {
+                type: "string",
+            },
+            required: true,
         },
     },
     computedFields,
