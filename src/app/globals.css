@@ -6,12 +6,10 @@
   
   padding: 0 45px;
   background-color: #292D32;
-}
-
-*{
-  font-family: "Popins", sans-serif;
   color: white;
 }
+
+
 
 /* body {
   color: rgb(var(--foreground-rgb));

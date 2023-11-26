@@ -18,10 +18,13 @@ function ProjectsPage() {
   const [repositories, setRepositories] = useState<githubProps[]>([]);
 
   useEffect(() => {
-    axios.get('https://api.github.com/users/elrichi31/repos')
+    axios.get<githubProps[]>('https://api.github.com/users/elrichi31/repos')
       .then(response => {
-        setRepositories(response.data);
-        console.log(response.data);
+        const sortedRepos = response.data.sort((a: githubProps, b: githubProps) => {
+          // Convertir las fechas a objetos Date y comparar
+          return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+        });
+        setRepositories(sortedRepos);
       })
       .catch(error => {
         console.error("Error fetching the repos", error);
@@ -35,7 +38,7 @@ function ProjectsPage() {
       <div className="mb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {repositories.map(repo => (
-            <Card key={repo.id} title={repo.name} description={repo.description || "No description provided."} website={repo.homepage} github={repo.html_url} language={repo.language} date={repo.updated_at}/>
+            <Card key={repo.id} title={repo.name} description={repo.description || "No description provided."} website={repo.homepage} github={repo.html_url} language={repo.language} date={repo.updated_at} />
           ))}
         </div>
       </div>

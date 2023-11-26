@@ -6,7 +6,7 @@ function Footer() {
         <footer className="mt-10">
             <div className="w-full mx-auto md:py-8">
                 <div className="flex flex-col [@media(min-width:605px)]:flex-row items-center justify-center [@media(min-width:605px)]:justify-between">
-                    <a href="https://flowbite.com/" className="flex items-center mb-4 [@media(min-width:605px)]:mb-0 justify-center">
+                    <a href="/" className="flex items-center mb-4 [@media(min-width:605px)]:mb-0 justify-center">
                         <Image src="/logo.png" alt="Logo" width={100} height={100} className="h-14 w-auto mr-2" />
                         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">AlphaBit</span>
                     </a>
@@ -17,7 +17,7 @@ function Footer() {
                     </ul>
                 </div>
                 <hr className="my-4 border-gray-200 [@media(min-width:605px)]:mx-auto dark:border-gray-700 lg:my-4" />
-                <span className="block text-[@media(min-width:605px)] text-gray-500 text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" className="hover:underline">AlphaBit™</a>. All Rights Reserved.</span>
+                <span className="block text-[@media(min-width:605px)] text-gray-500 text-center dark:text-gray-400">© 2023 <a href="/" className="hover:underline">AlphaBit™</a>. All Rights Reserved.</span>
             </div>
         </footer>
     );

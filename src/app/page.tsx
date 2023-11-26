@@ -22,15 +22,18 @@ function Page() {
     const [repositories, setRepositories] = useState<githubProps[]>([]);
 
     useEffect(() => {
-        axios.get('https://api.github.com/users/elrichi31/repos')
-            .then(response => {
-                setRepositories(response.data);
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.error("Error fetching the repos", error);
+        axios.get<githubProps[]>('https://api.github.com/users/elrichi31/repos')
+          .then(response => {
+            const sortedRepos = response.data.sort((a: githubProps, b: githubProps) => {
+              // Convertir las fechas a objetos Date y comparar
+              return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
             });
-    }, []);
+            setRepositories(sortedRepos);
+          })
+          .catch(error => {
+            console.error("Error fetching the repos", error);
+          });
+      }, []);
     return (
         <div>
             <Hero /> 
